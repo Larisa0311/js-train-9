@@ -354,13 +354,8 @@ function expandArrayByN(arr, n) {
   // Використовуємо метод flatMap для створення нового масиву, де кожне число повторюється n разів
   // Повертаємо розширений масив
 if (Array.isArray(arr) === true) { 
-    const expandedArray = arr.flatMap((element) => {
-      let arrNew = [];
-      for (let i = 0; i < n; i++) {
-      arrNew[i] = element;  
-      }
-      return (arrNew);
-    }); 
+    const expandedArray = arr.flatMap((num) => 
+      Array(n).fill(num));   
 
     return expandedArray;
   } else {return 'Вхідний параметр має бути масивом';}
